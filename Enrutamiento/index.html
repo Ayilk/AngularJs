@@ -1,0 +1,26 @@
+<html ng-app="enrutamiento" >
+<head>
+<title>Ejemplo Routing</title>
+</head>
+
+<body ng-controller="MainController">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#/">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contactenos">Contactenos</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div>
+        <div ng-view></div>
+    </div>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="/ngular-route.min.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

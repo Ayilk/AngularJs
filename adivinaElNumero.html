@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="adivinaNumero">
+  <head>
+    <title>Adivina el Número</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="AdivinarNumeroController">
+      <h3>Adivina un número entre 1 y 100</h3>
+      <p> Intento: {{intentos}}</p>
+
+      <input type="number" ng-model="numeroUsuario">
+      <button ng-click="verificar()">Verificar</button>
+      <button ng-click="inicializar()">Comenzar de nuevo</button>
+
+      <p>
+        <p ng-show="diferencia < 0">Muy alto</p>
+        <p ng-show="diferencia > 0">Muy bajo</p>
+        <p ng-show="diferencia==0">Perfecto!! Adivinaste!!</p>
+      </p>
+    </div>
+    <script>
+        angular.module('adivinaNumero', [])
+        .controller('AdivinarNumeroController', function($scope){
+            $scope.inicializar = function(){
+                $scope.intentos = 0;
+                $scope.numeroUsuario= null;
+                $scope.diferencia = null;
+                $scope.numeroSecreto = Math.floor((100 * Math.random()) + 1);
+            }
+
+            $scope.verificar = function(){
+                $scope.intentos += 1;
+                $scope.diferencia = $scope.numeroSecreto - $scope.numeroUsuario;
+            }
+
+            $scope.inicializar();
+        })
+    </script>
+  </body>
+</html>

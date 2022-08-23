@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="filtros">
+  <head>
+    <title>filtros</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="FiltrosController">
+      {{'buenos días' | uppercase}}<br/>
+      {{'buenos días' | limitTo:6}}<br/>
+      {{'buenos días' | uppercase | limitTo: 3}}<br/>
+      {{200 | currency}}<br/>
+      {{hoy | date: 'fullDate'}}<br/>
+      {{hoy | date: 'shortDate'}}<br/>
+      {{hoy | date: 'yy'}}<br/>
+      {{hoy | date: 'mm'}}<br/>
+      {{hoy | date: 'dd'}}<br/>
+      {{dias | filter: '!s'}}<br/>
+      {{
+        personas | filter: {'nacionalidad':'Colombiano'} 
+      }}<br/>
+      {{
+        "Había una vez " | suspensivos
+      }}<br/>
+      {{
+        "Había una vez " | limitTo: 5 |suspensivos
+      }}<br/>
+      {{
+        "sandra" | primeraMayusculas
+      }}
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

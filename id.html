@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>Imagen de facebook</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <label>ID:</label>
+      <input type="text" ng-model="fbID" placeholder="Enter an ID">
+      <hr>
+      <p>
+        <img src="https://graph.facebook.com./{{fbID}}/picture?type=normal"/>
+      </p>
+    </div>
+  </body>
+</html>

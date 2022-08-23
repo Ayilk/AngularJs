@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Imagen de Facebook</title>
+</head>
+<body ng-app>
+    <div>
+        <input type="text" ng-model="fbID"/>
+        <p>
+            <img src="https://graph.facebook.com/{{fbID}}/picture?type=normal"/>
+        </p>
+    </div>
+    <script src="js/angular.min.js"></script>
+</body>
+</html>

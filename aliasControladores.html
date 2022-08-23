@@ -1,0 +1,16 @@
+<!doctype html>
+<html ng-app="miModulo">
+  <head>
+    <title>Alias de Controladores</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="PadreController as padre">
+        {{padre.nombre}}
+      <div ng-controller="HijoController as hijo">
+        {{hijo.nombre + ', ' + padre.nombre}}
+      </div>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="miApp">
+  <head>
+    <style>
+        #controladorExterno {
+            background-color: grey;
+            padding: 10px;
+        }
+        #controladorInterno {
+            background-color: red;
+            padding: 10px;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <p><strong>Podemos ver:</strong>{{propiedadRaiz}}</p>
+    <div id="controladorExterno" ng-controller="controladorExterno">
+        <p><strong>Podemos ver:</strong>{{propiedadRaiz}} y {{propiedadExterna}}</p>
+        <div id="controladorInterno" ng-controller="controladorInterno">
+            <p><strong>Podemos ver:</strong>
+                {{propiedadRaiz}} y 
+                {{propiedadExterna}} y 
+                {{propiedadInterna}}</p>
+
+                {{mensaje}}
+        </div>
+    </div>
+    <script src="/app.js"> </script>        
+   
+  </body>
+</html>

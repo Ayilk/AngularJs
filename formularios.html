@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="validacion" ng-controller="MainControllerV">
+  <head>
+    <meta charset="utf-8">
+    <title>Validación de formularios</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="/angular-messages.min.js"></script>
+    <script src="/app.js"></script>
+  </head>
+  <body >
+    <form name="formulario">
+        <div>
+            <label>Nombre</label>
+            <input 
+                type="text" 
+                name="nombre" 
+                ng-model="nombre" 
+                ng-minlength="4"
+                ng-maxlength="10"
+                required
+            >
+        </div>
+        <div ng-messages="formulario.nombre.$error" ng-if="formulario.nombre.$touched">
+            <div ng-messages-include="mensajes.html"></div>             
+        </div>
+        <div>
+            <label>Apellidos</label>
+            <input 
+                type="text" 
+                name="apellido"
+                ng-model="apellido"
+                ng-minlength="4"
+                ng-maxlength="10" 
+                required
+            >
+        </div>
+        <div ng-messages="formulario.apellido.$error" ng-if="formulario.apellido.$touched">
+            <div ng-messages-include="mensajes.html"></div>             
+        </div>
+        <div>
+            <label>Correo electrónico</label>
+            <input  
+                 type="email" 
+                 name="email"
+                 ng-model="apellido"
+                 ng-minlength="4"
+                 ng-maxlength="10"
+                 required
+            >
+        </div>
+        <div ng-messages-multiple ng-messages="formulario.email.$error" ng-if="formulario.email.$touched">
+            <div ng-messages-include="mensajes.html"></div>             
+        </div>
+        <div>
+            <label>Teléfono</label>
+            <input 
+                 type="number" 
+                 name="telefono"
+                 ng-model="apellido"
+                 ng-minlength="10"
+                 ng-maxlength="10"
+                 required
+                 >
+        </div>
+        <div ng-messages="formulario.telefono.$error" ng-if="formulario.telefono.$touched">
+            <div ng-messages-include="mensajes.html"></div>             
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+  </body>
+</html>

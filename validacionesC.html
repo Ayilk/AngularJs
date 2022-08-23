@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Validación de formularios</title>
+
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-messages.min.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+<body ng-app="validacion" ng-controller="MainController">
+    <form name="formulario">
+        <div>
+            <label>Nombre</label>
+            <input type="text" name="nombre"
+            ng-model="nombre"
+            ng-minlength="4"
+            ng-maxlength="10"
+            required>
+        </div>
+        <div ng-messages="formulario.nombre.$error" ng-if="formulario.nombre.$touched">
+            <div ng-messages-include="mensajes.html"></div>   
+        </div>
+        <div>
+            <label>Apellido</label>
+            <input type="text" name="apellido"
+            ng-model="apellido"
+            ng-minlength="4"
+            ng-maxlength="10"
+            required>
+        </div>
+        <div ng-messages="formulario.apellido.$error" ng-if="formulario.apellido.$touched">
+            <div ng-messages-include="mensajes.html"></div>   
+        </div>
+        <div>
+            <label>Correo electronico</label>
+            <input type="email" name="email"
+            ng-model="email"
+            required>
+        </div>
+        <div ng-messages="formulario.email.$error" ng-if="formulario.email.$touched">
+            <div ng-messages-include="mensajes.html"></div>   
+        </div>
+        <div>
+            <label>Telefono</label>
+            <input type="text" name="telefono"
+            ng-model="telefono"
+            ng-pattern="/[0-9]{3}[-]{1}[0-9]{3}[-]{1}[0-9]{4}$/"
+            required>
+        </div>
+        <div ng-messages="formulario.telefono.$error" ng-if="formulario.telefono.$touched">
+            <div ng-messages-include="mensajes.html"></div>   
+        </div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>

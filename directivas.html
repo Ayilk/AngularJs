@@ -1,0 +1,87 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>Directivas comunes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        .error {
+            color: red;
+            background-color: yellow;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        div{
+            padding: 20 0 20 0;
+        }
+    </style>
+  </head>
+  <body>
+    <div>ng-init</div>
+    <span ng-init="x=400; y=100">
+        {{x + "-" + y}}
+    </span><br>
+    <span ng-init="persona={nombre: 'Sandra', apellido: 'Rangel'}">
+        {{persona.nombre + " " + persona.apellido}}
+    </span>
+
+    <div>ng-if</div>
+    <span ng-if="x>500">x es mayor a 500</span>
+    <span ng-if="x<500">x es menor a 500</span>
+    <span ng-if="x==500">x es igual a 500</span>
+
+    <div>ng-click</div>
+    <input type="button" value="Incrementar" ng-click="contador = contador + 1" ng-init="contador=0">
+    {{contador}}
+
+    <div>ng-mouseOver</div>
+    <input type="button" value="Incrementar" ng-mouseOver="contador2 = contador2 + 1" ng-init="contador2=0">
+    {{contador2}}
+
+    <div>ng-dbclick</div>
+    <input type="button" value="Incrementar" ng-dblclick="contador3 = contador3 + 1" ng-init="contador3=0">
+    {{contador3}}
+
+    <div>ng-keypress</div>
+    <input type="text" ng-keypress="contador4 = contador4 + 1" ng-init="contador4=0">
+    {{contador4}}
+
+    <div>ng-show ng-hide</div>
+    <input type="checkbox" ng-model="showHide">
+    <br/>
+    <div>
+        <span ng-show="showHide">
+            Show está seleccionado
+        </span>
+    </div>
+    <div>
+        <span ng-hide="showHide">
+            Show no está seleccionado
+        </span>
+    </div>
+
+    <div ng-init="
+    personas=[
+        {nombre:'Raul', pais:'Colombia},
+        {nombre:'Carlos', pais:'Venezuela'},
+        {nombre:'Jose', pais:'Argentina'}]">
+        ng-repeat</div>
+    <span ng-repeat="p in personas">
+        {{p.nombre + "es de" + p.pais}}
+        <br/>
+    </span>
+
+    <div>ng-class</div>
+    <input type="text" ng-model="estilo1">
+    <p ng-class="estilo1">ng-class test 1</p>
+
+    <input type="text" ng-model="estilo2">
+    <input type="text" ng-model="estilo3">
+    <p ng-class="[estilo2, estilo3]">ng-class test 2</p>
+
+    <input type="checkbox" ng-model="usarError"> error
+    <input type="checkbox" ng-model="usarBold"> bold
+
+    <p ng-class="{'error': usarError, 'bold': usarBold}">ng-class test 3</p>
+  </body>
+</html>

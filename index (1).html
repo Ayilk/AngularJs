@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Enlace de datos</title>
+</head>
+   <body ng-app>
+        <div>
+            <input type="text" ng-model="miNombre">
+            <p ng-init="miNombre='Carlos'">{{ miNombre }}</p>
+            <input type="button" value="Luis" ng-click="miNombre='Luis'"/>
+        </div>
+        <script src="js/angular.min.js"></script>
+    </body>
+</html>

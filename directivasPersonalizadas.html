@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="miModulo1">
+  <head>
+    <title>Directivas Personalizadas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body >
+    <div ng-controller="miControlador">
+     <mi-directiva libro-autor="{{libro.autor}}"
+                   libro-titulo="{{libro.titulo}}"
+                   libro-objeto="libro"
+                   en-mayusculas="enMayusculas(libro)"></mi-directiva>
+     
+    </div>
+  </body>
+  <script src="/app.js"></script>
+</html>
